@@ -24,6 +24,6 @@ wss.on('connection', (ws) => {
 });
 
 // Start the server
-server.listen(443, () => {
+server.listen(8081, () => {
   console.log('WebSocket server is running');
 });
