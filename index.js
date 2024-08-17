@@ -8,7 +8,7 @@ const WebSocket = require('ws');
 //   key: fs.readFileSync('./key.pem')
 // });
 
-const server = http.createServer(function(request, response) {
+const server = https.createServer(function(request, response) {
 });
 
 const wss = new WebSocket.Server({ server });
