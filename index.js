@@ -3,9 +3,12 @@ const fs = require('fs');
 const WebSocket = require('ws');
 
 // SSL certificates
-const server = https.createServer({
-  cert: fs.readFileSync('./cert.pem'),
-  key: fs.readFileSync('./key.pem')
+// const server = https.createServer({
+//   cert: fs.readFileSync('./cert.pem'),
+//   key: fs.readFileSync('./key.pem')
+// });
+
+const server = http.createServer(function(request, response) {
 });
 
 const wss = new WebSocket.Server({ server });
@@ -21,6 +24,11 @@ wss.on('connection', (ws) => {
   ws.on('close', () => {
     console.log('Client disconnected');
   });
+});
+
+server.on('error', function (e) {
+  // Handle your error here
+  console.log("007 "+e);
 });
 
 // Start the server
